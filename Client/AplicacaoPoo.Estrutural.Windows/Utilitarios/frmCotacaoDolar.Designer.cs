@@ -1,6 +1,6 @@
 ﻿namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
 {
-    partial class CotacaoDolar
+    partial class frmCotacaoDolar
     {
         /// <summary>
         /// Required designer variable.
@@ -132,11 +132,11 @@
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
-            // CotacaoDolar
+            // frmCotacaoDolar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 119);
+            this.ClientSize = new System.Drawing.Size(338, 123);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.lblValorReal);
             this.Controls.Add(this.lblResultado);
@@ -147,7 +147,7 @@
             this.Controls.Add(this.lblCotacaoAtual);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.richTextBox2);
-            this.Name = "CotacaoDolar";
+            this.Name = "frmCotacaoDolar";
             this.Text = "CotacaoDolar";
             this.ResumeLayout(false);
             this.PerformLayout();

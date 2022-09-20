@@ -11,11 +11,12 @@ using System.Windows.Forms;
 
 namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
 {
-    public partial class CotacaoDolar : Form
+    public partial class frmCotacaoDolar : Form
     {
-        public CotacaoDolar()
+        public frmCotacaoDolar()
         {
             InitializeComponent();
+            btnConverter.Enabled = false;
         }
 
         private void btnConverter_Click(object sender, EventArgs e)
@@ -32,6 +33,5 @@ namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
             txtCotacaoAtual.Text = null;
             txtQuantiaDolar.Text = null;
         }
-
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
 {
-    public partial class Comissao : Form
+    public partial class frmComissao : Form
     {
-        public Comissao()
+        public frmComissao()
         {
             InitializeComponent();
         }
