@@ -1,13 +1,4 @@
-﻿using AplicacaoPoo.Dominio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using AplicacaoPoo.Dominio.services;
 
 namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
 {
@@ -19,19 +10,34 @@ namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
             btnConverter.Enabled = false;
         }
 
-        private void btnConverter_Click(object sender, EventArgs e)
+        private void txtQuantiaDolar_TextChanged(object sender, EventArgs e)
         {
-            double cotacao = double.Parse(txtCotacaoAtual.Text);
-            double quantia = double.Parse(txtQuantiaDolar.Text);
-            lblResultado.Text = Cotacao.ConversaoDolar(cotacao, quantia).ToString();
-            MessageBox.Show(lblResultado.Text); 
+            try
+            {
+                if (txtQuantiaDolar.Text == "")
+                {
+                    btnConverter.Enabled = false;
+                    return;
+                }
+                var resultado = decimal.Parse(txtQuantiaDolar.Text);
+                btnConverter.Enabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("A cotação do dalor é um valor decimal");
+                txtQuantiaDolar.Focus();
+                btnConverter.Enabled = false;
+
+            }
         }
 
-        private void btnLimpar_Click(object sender, EventArgs e)
+        private void btnConverter_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = null;
-            txtCotacaoAtual.Text = null;
-            txtQuantiaDolar.Text = null;
+            var valorEmDolar = decimal.Parse(txtQuantiaDolar.Text);
+            var moeda = new ConverterMoedaService();
+            var resultado = moeda.ConverterDolarEmReal(valorEmDolar);
+
+            MessageBox.Show($"Valor convertido é : {resultado} em dolares");
         }
     }
 }
