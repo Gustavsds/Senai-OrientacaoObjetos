@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblQuantiaDolar = new System.Windows.Forms.Label();
-            this.txtQuantiaDolar = new System.Windows.Forms.TextBox();
+            this.txtQuantia = new System.Windows.Forms.TextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.lblPrimeiroValor = new System.Windows.Forms.Label();
             this.lblSegundoValor = new System.Windows.Forms.Label();
@@ -48,15 +48,15 @@
             this.lblQuantiaDolar.TabIndex = 1;
             this.lblQuantiaDolar.Text = "Valor desejado :";
             // 
-            // txtQuantiaDolar
+            // txtQuantia
             // 
-            this.txtQuantiaDolar.BackColor = System.Drawing.Color.Silver;
-            this.txtQuantiaDolar.ForeColor = System.Drawing.Color.White;
-            this.txtQuantiaDolar.Location = new System.Drawing.Point(240, 91);
-            this.txtQuantiaDolar.Name = "txtQuantiaDolar";
-            this.txtQuantiaDolar.Size = new System.Drawing.Size(81, 23);
-            this.txtQuantiaDolar.TabIndex = 5;
-            this.txtQuantiaDolar.TextChanged += new System.EventHandler(this.txtQuantiaDolar_TextChanged);
+            this.txtQuantia.BackColor = System.Drawing.Color.Silver;
+            this.txtQuantia.ForeColor = System.Drawing.Color.White;
+            this.txtQuantia.Location = new System.Drawing.Point(240, 91);
+            this.txtQuantia.Name = "txtQuantia";
+            this.txtQuantia.Size = new System.Drawing.Size(81, 23);
+            this.txtQuantia.TabIndex = 5;
+            this.txtQuantia.TextChanged += new System.EventHandler(this.txtQuantiaDolar_TextChanged);
             // 
             // richTextBox2
             // 
@@ -116,7 +116,7 @@
             this.Controls.Add(this.cmbMoedaDesejada);
             this.Controls.Add(this.lblSegundoValor);
             this.Controls.Add(this.lblPrimeiroValor);
-            this.Controls.Add(this.txtQuantiaDolar);
+            this.Controls.Add(this.txtQuantia);
             this.Controls.Add(this.lblQuantiaDolar);
             this.Controls.Add(this.richTextBox2);
             this.Name = "frmCotacaoDolar";
@@ -130,7 +130,7 @@
 
 
         private Label lblQuantiaDolar;
-        private TextBox txtQuantiaDolar;
+        private TextBox txtQuantia;
         private RichTextBox richTextBox2;
         private Label lblPrimeiroValor;
         private Label lblSegundoValor;
