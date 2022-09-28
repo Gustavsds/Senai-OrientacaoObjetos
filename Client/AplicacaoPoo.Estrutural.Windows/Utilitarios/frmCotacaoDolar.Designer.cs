@@ -88,7 +88,7 @@
             this.lblSegundoValor.BackColor = System.Drawing.Color.Transparent;
             this.lblSegundoValor.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSegundoValor.ForeColor = System.Drawing.Color.White;
-            this.lblSegundoValor.Location = new System.Drawing.Point(33, 27);
+            this.lblSegundoValor.Location = new System.Drawing.Point(33, 28);
             this.lblSegundoValor.Name = "lblSegundoValor";
             this.lblSegundoValor.Size = new System.Drawing.Size(159, 60);
             this.lblSegundoValor.TabIndex = 8;

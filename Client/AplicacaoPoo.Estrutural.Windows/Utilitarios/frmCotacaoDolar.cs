@@ -10,7 +10,7 @@ namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
             InitializeComponent();
             lblPrimeiroValor.Text = $"1 {MoedaHelper.Dolar} igual a";
             lblSegundoValor.Text = $"5,12 {MoedaHelper.Real}";
-
+            txtQuantia.Text = "1";
             var list = new List<string>();
             list.Add(MoedaHelper.Dolar);
             list.Add(MoedaHelper.Libras);
@@ -21,92 +21,29 @@ namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
 
         private void txtQuantiaDolar_TextChanged(object sender, EventArgs e)
         {
-            try
+
+            if(txtQuantia.Text == "")
             {
-                if (txtQuantia.Text == "")
-
-                {
-                    return;
-                }
-                decimal resultado = 0;
-
-                var quantia = decimal.Parse(txtQuantia.Text);
-                var moeda = new ConverterMoedaService();
-                resultado = moeda.ConverterDolarEmReal(quantia);
-
-                switch (cmbMoedaDesejada.SelectedValue)
-                {
-
-                    case "Dolar Americano":
-                        resultado = moeda.ConverterDolarEmReal(quantia);
-                        lblPrimeiroValor.Text = $"{quantia} {MoedaHelper.Dolar} igual a";
-                        lblSegundoValor.Text = $"{resultado} {MoedaHelper.Real}";
-
-                        break;
-
-                    case "Euro":
-                        resultado = moeda.ConverterEuroEmReal(quantia);
-                        lblPrimeiroValor.Text = $"{quantia} {MoedaHelper.Euro} igual a";
-                        lblSegundoValor.Text = $"{resultado} {MoedaHelper.Real}";
-
-                        break;
-
-                    case "Libra Esterlina":
-                        resultado = moeda.ConverterLibraEmReal(quantia);
-                        lblPrimeiroValor.Text = $"{quantia} {MoedaHelper.Libras} igual a";
-                        lblSegundoValor.Text = $"{resultado} {MoedaHelper.Real}";
-
-                        break;
-
-                }
-
+                cmbMoedaDesejada.Enabled = false;
+                return;
             }
-            catch (Exception)
-            {
-                MessageBox.Show("A cotação do dalor é um valor decimal");
-                txtQuantia.Focus();
-
-            }
-
-           
-            }
+            cmbMoedaDesejada.Enabled = true;  
+            EfetuarConversaoMoeda();
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            #region
-            //decimal resultado = 0;
-
-            //var quantia = decimal.Parse(txtQuantia.Text);
-            //var moeda = new ConverterMoedaService();
-            //resultado = moeda.ConverterDolarEmReal(quantia);
-
-            //switch (cmbMoedaDesejada.SelectedValue)
-            //{
-
-            //    case "Dolar Americano":
-            //        resultado = moeda.ConverterDolarEmReal(quantia);
-            //        lblPrimeiroValor.Text = $"{quantia} {MoedaHelper.Dolar} igual a";
-            //        lblSegundoValor.Text = $"{resultado} {MoedaHelper.Real}";
-
-            //        break;
-
-            //    case "Euro":
-            //        resultado = moeda.ConverterEuroEmReal(quantia); 
-            //        lblPrimeiroValor.Text = $"{quantia} {MoedaHelper.Euro} igual a";
-            //        lblSegundoValor.Text = $"{resultado} {MoedaHelper.Real}";
-
-            //        break;
-
-            //    case "Libra Esterlina":
-            //        resultado = moeda.ConverterLibraEmReal(quantia);
-            //        lblPrimeiroValor.Text = $"{quantia} {MoedaHelper.Libras} igual a";
-            //        lblSegundoValor.Text = $"{resultado} {MoedaHelper.Real}";
-
-            //        break;
-            #endregion
+            EfetuarConversaoMoeda();
+        }
+        private void EfetuarConversaoMoeda()
+        {
+            
+            try
+            {
+            #region Caluculo da conversão
             if (txtQuantia.Text == "") return;
             var quantia = decimal.Parse(txtQuantia.Text);
             var moedaService = new ConverterMoedaService();
-            switch(cmbMoedaDesejada.SelectedValue)
+            switch (cmbMoedaDesejada.SelectedValue)
             {
                 case MoedaHelper.Dolar:
                     {
@@ -114,21 +51,34 @@ namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
                         lblPrimeiroValor.Text = $"{quantia} {MoedaHelper.Dolar} igual a";
                         lblSegundoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
 
-
                         break;
                     }
                 case MoedaHelper.Euro:
                     {
-                        var valorConvertido = moedaService.ConverterEuroEmReal(quantia); 
-                        break ;
+                        var valorConvertido = moedaService.ConverterEuroEmReal(quantia);
+                        lblPrimeiroValor.Text = $"{quantia} {MoedaHelper.Euro} igual a";
+                        lblSegundoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
+
+                        break;
                     }
                 case MoedaHelper.Libras:
                     {
-                        var valorConvertido = moedaService.ConverterLibraEmReal(quantia);    
+                        var valorConvertido = moedaService.ConverterLibraEmReal(quantia);
+                        lblPrimeiroValor.Text = $"{quantia} {MoedaHelper.Libras} igual a";
+                        lblSegundoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
+
                         break;
                     }
             }
-
+            #endregion
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Você precisa informar um valor númerico");
+                txtQuantia.Text = string.Empty;
+                txtQuantia.Focus();
+            }
         }
+
     }
 }
