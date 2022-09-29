@@ -28,46 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnComissao = new System.Windows.Forms.Button();
-            this.btnConversor = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.conversorDeMoedasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comissionamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnComissao
+            // menuStrip1
             // 
-            this.btnComissao.Location = new System.Drawing.Point(12, 47);
-            this.btnComissao.Name = "btnComissao";
-            this.btnComissao.Size = new System.Drawing.Size(149, 93);
-            this.btnComissao.TabIndex = 0;
-            this.btnComissao.Text = "COMISSÃO";
-            this.btnComissao.UseVisualStyleBackColor = true;
-            this.btnComissao.Click += new System.EventHandler(this.btnComissao_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.conversorDeMoedasToolStripMenuItem,
+            this.comissionamentoToolStripMenuItem,
+            this.cadastrosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(585, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnConversor
+            // conversorDeMoedasToolStripMenuItem
             // 
-            this.btnConversor.Location = new System.Drawing.Point(194, 47);
-            this.btnConversor.Name = "btnConversor";
-            this.btnConversor.Size = new System.Drawing.Size(154, 93);
-            this.btnConversor.TabIndex = 1;
-            this.btnConversor.Text = "CONVERSOR";
-            this.btnConversor.UseVisualStyleBackColor = true;
-            this.btnConversor.Click += new System.EventHandler(this.btnConversor_Click);
+            this.conversorDeMoedasToolStripMenuItem.Name = "conversorDeMoedasToolStripMenuItem";
+            this.conversorDeMoedasToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
+            this.conversorDeMoedasToolStripMenuItem.Text = "Conversor de Moedas";
+            this.conversorDeMoedasToolStripMenuItem.Click += new System.EventHandler(this.conversorDeMoedasToolStripMenuItem_Click);
+            // 
+            // comissionamentoToolStripMenuItem
+            // 
+            this.comissionamentoToolStripMenuItem.Name = "comissionamentoToolStripMenuItem";
+            this.comissionamentoToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
+            this.comissionamentoToolStripMenuItem.Text = "Comissionamento";
+            this.comissionamentoToolStripMenuItem.Click += new System.EventHandler(this.comissionamentoToolStripMenuItem_Click);
+            // 
+            // cadastrosToolStripMenuItem
+            // 
+            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 194);
-            this.Controls.Add(this.btnConversor);
-            this.Controls.Add(this.btnComissao);
+            this.ClientSize = new System.Drawing.Size(585, 366);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.Text = "frmPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Button btnComissao;
-        private Button btnConversor;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem conversorDeMoedasToolStripMenuItem;
+        private ToolStripMenuItem comissionamentoToolStripMenuItem;
+        private ToolStripMenuItem cadastrosToolStripMenuItem;
     }
 }
