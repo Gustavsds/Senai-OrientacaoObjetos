@@ -34,7 +34,7 @@
             this.lblQuantidadeVendida = new System.Windows.Forms.Label();
             this.txtNomeVendedor = new System.Windows.Forms.TextBox();
             this.txtCodigoProduto = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPrecoProduto = new System.Windows.Forms.TextBox();
             this.txtQuantidadeVendida = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -88,12 +88,12 @@
             this.txtCodigoProduto.Size = new System.Drawing.Size(100, 23);
             this.txtCodigoProduto.TabIndex = 5;
             // 
-            // textBox3
+            // txtPrecoProduto
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 100);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 6;
+            this.txtPrecoProduto.Location = new System.Drawing.Point(12, 100);
+            this.txtPrecoProduto.Name = "txtPrecoProduto";
+            this.txtPrecoProduto.Size = new System.Drawing.Size(100, 23);
+            this.txtPrecoProduto.TabIndex = 6;
             // 
             // txtQuantidadeVendida
             // 
@@ -108,13 +108,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(283, 303);
             this.Controls.Add(this.txtQuantidadeVendida);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPrecoProduto);
             this.Controls.Add(this.txtCodigoProduto);
             this.Controls.Add(this.txtNomeVendedor);
             this.Controls.Add(this.lblQuantidadeVendida);
             this.Controls.Add(this.lblPrecoProduto);
             this.Controls.Add(this.lblCodigoProduto);
             this.Controls.Add(this.lblNomeVendedor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmComissao";
             this.Text = "Comissão";
             this.ResumeLayout(false);
@@ -130,7 +131,7 @@
         private Label lblQuantidadeVendida;
         private TextBox txtNomeVendedor;
         private TextBox txtCodigoProduto;
-        private TextBox textBox3;
+        private TextBox txtPrecoProduto;
         private TextBox txtQuantidadeVendida;
     }
 }

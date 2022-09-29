@@ -16,16 +16,17 @@ namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
         {
             InitializeComponent();
         }
-
-        private void btnComissao_Click(object sender, EventArgs e)
+        private void conversorDeMoedasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new frmComissao();   
+            var form = new frmCotacaoDolar();
+            form.MdiParent = this;
             form.Show();
         }
 
-        private void btnConversor_Click(object sender, EventArgs e)
+        private void comissionamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new frmCotacaoDolar();
+            var form = new frmComissao();   
+            form.MdiParent = this;
             form.Show();
         }
     }
