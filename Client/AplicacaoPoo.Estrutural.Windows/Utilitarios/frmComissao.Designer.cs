@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNomeVendedor = new System.Windows.Forms.Label();
             this.lblCodigoProduto = new System.Windows.Forms.Label();
             this.lblPrecoProduto = new System.Windows.Forms.Label();
@@ -36,6 +37,10 @@
             this.txtCodigoProduto = new System.Windows.Forms.TextBox();
             this.txtPrecoProduto = new System.Windows.Forms.TextBox();
             this.txtQuantidadeVendida = new System.Windows.Forms.TextBox();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.ltbInformacoes = new System.Windows.Forms.ListBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNomeVendedor
@@ -80,6 +85,7 @@
             this.txtNomeVendedor.Name = "txtNomeVendedor";
             this.txtNomeVendedor.Size = new System.Drawing.Size(100, 23);
             this.txtNomeVendedor.TabIndex = 4;
+            this.txtNomeVendedor.TextChanged += new System.EventHandler(this.txtNomeVendedor_TextChanged);
             // 
             // txtCodigoProduto
             // 
@@ -87,6 +93,7 @@
             this.txtCodigoProduto.Name = "txtCodigoProduto";
             this.txtCodigoProduto.Size = new System.Drawing.Size(100, 23);
             this.txtCodigoProduto.TabIndex = 5;
+            this.txtCodigoProduto.TextChanged += new System.EventHandler(this.txtCodigoProduto_TextChanged);
             // 
             // txtPrecoProduto
             // 
@@ -94,6 +101,7 @@
             this.txtPrecoProduto.Name = "txtPrecoProduto";
             this.txtPrecoProduto.Size = new System.Drawing.Size(100, 23);
             this.txtPrecoProduto.TabIndex = 6;
+            this.txtPrecoProduto.TextChanged += new System.EventHandler(this.txtPrecoProduto_TextChanged);
             // 
             // txtQuantidadeVendida
             // 
@@ -101,12 +109,38 @@
             this.txtQuantidadeVendida.Name = "txtQuantidadeVendida";
             this.txtQuantidadeVendida.Size = new System.Drawing.Size(100, 23);
             this.txtQuantidadeVendida.TabIndex = 7;
+            this.txtQuantidadeVendida.TextChanged += new System.EventHandler(this.txtQuantidadeVendida_TextChanged);
+            // 
+            // btnEnviar
+            // 
+            this.btnEnviar.Location = new System.Drawing.Point(99, 268);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(75, 23);
+            this.btnEnviar.TabIndex = 8;
+            this.btnEnviar.Text = "ENVIAR";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
+            // ltbInformacoes
+            // 
+            this.ltbInformacoes.FormattingEnabled = true;
+            this.ltbInformacoes.ItemHeight = 15;
+            this.ltbInformacoes.Location = new System.Drawing.Point(12, 140);
+            this.ltbInformacoes.Name = "ltbInformacoes";
+            this.ltbInformacoes.Size = new System.Drawing.Size(249, 124);
+            this.ltbInformacoes.TabIndex = 9;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmComissao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(283, 303);
+            this.Controls.Add(this.ltbInformacoes);
+            this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.txtQuantidadeVendida);
             this.Controls.Add(this.txtPrecoProduto);
             this.Controls.Add(this.txtCodigoProduto);
@@ -118,6 +152,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmComissao";
             this.Text = "Comissão";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +168,8 @@
         private TextBox txtCodigoProduto;
         private TextBox txtPrecoProduto;
         private TextBox txtQuantidadeVendida;
+        private Button btnEnviar;
+        private ListBox ltbInformacoes;
+        private ErrorProvider errorProvider1;
     }
 }
