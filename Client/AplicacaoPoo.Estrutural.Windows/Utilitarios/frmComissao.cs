@@ -18,7 +18,9 @@ namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
             InitializeComponent();
             txtCodigoProduto.Enabled = false;
             txtPrecoProduto.Enabled = false;
-            txtQuantidadeVendida.Enabled = false;    
+            txtQuantidadeVendida.Enabled = false;  
+            btnEnviar.Enabled = false;
+            
 
         }
 
@@ -36,8 +38,7 @@ namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
             ltbInformacoes.Items.Add("Colaborador: "+ nome);
             ltbInformacoes.Items.Add("codigo do produto: "+ codigoProduto);
             ltbInformacoes.Items.Add("Quantidade Vendida: " + quantidadeVendida);
-            ltbInformacoes.Items.Add("Codigo do produto: " + codigoProduto);
-
+            ltbInformacoes.Items.Add("Valor do produto: $" + precoProduto);
         }
 
         private void txtNomeVendedor_TextChanged(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace AplicacaoPoo.Estrutural.Windows.Utilitarios
             }
             else
             {
-                errorProvider1.SetError(txtNomeVendedor, "");
+                errorProvider1.SetError(txtCodigoProduto, "");
                 txtPrecoProduto.Enabled = true;
             }
         }
